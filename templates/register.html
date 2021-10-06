@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}SIGN-UP{% endblock %}
+{% block content %}
+<form action="GET">   
+    <h2 style="text-align:center; color: green; margin-top: 20px;">you have successfully booked</h2><br>
+    <button type="submit" class="btn btn-primary" name="login" style="margin: 1rem auto 0 auto; display: block ;" ><a href="{% url 'myenroll_list' %}" class="btn btn-primary">Courses Enrolled</a></button><br>
+    <button type="submit" class="btn btn-primary" name="login" style="margin: 1rem auto 0 auto; display: block ;" ><a href="{% url 'myenroll_list' %}" class="btn btn-primary"></a></button><br>
+    <button type="submit" class="btn btn-primary" name="login" style="margin: 1rem auto 0 auto; display: block ;" ><a href="{% url 'myenroll_list' %}" class="btn btn-primary"></a></button><br>
+</form> 
+{% endblock %}

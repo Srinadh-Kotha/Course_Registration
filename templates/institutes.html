@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}INSTITUTES{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-3" style="margin-top: 20px;">
+        <div class="card" style="width: 19rem;">
+            <img src="{% static 'b1.jpg' %}" class="card-img-top" alt="Responsive-image">
+            <div class="card-body">
+              <h5 class="card-title">SARJAPURA Branch</h5>
+              <p class="card-text">#4/96,4th main, Sarjapura</p>
+              <p class="card-text">Bangalore-560042</p>
+              <a href="{% url 'courselist1' %}" class="btn btn-primary">Go to COURSES</a>
+            </div>
+        </div>    
+    </div>
+
+    <div class="col-md-3" style="margin-top: 20px;">
+        <div class="card" style="width: 19rem;">
+            <img src="{% static 'b2.jpg' %}" class="card-img-top" alt="Responsive-image">
+            <div class="card-body">
+              <h5 class="card-title">YESHWANTHPUR branch</h5>
+              <p class="card-text">#842,3rd cross, Yeshwantpur</p>
+              <p class="card-text">Bangalore-560022</p>
+              <a href="{% url 'courselist2' %}" class="btn btn-primary">Go to COURSES</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" style="margin-top: 20px;">
+        <div class="card" style="width: 19rem;">
+            <img src="{% static 'b3.jpeg' %}" class="card-img-top" alt="Responsive-image">
+            <div class="card-body">
+              <h5 class="card-title">KORAMANGALA Branch</h5>
+              <p class="card-text">#842,5th cross, Koramangala</p>
+              <p class="card-text">Church Street, Bangalore-560027</p>
+              <a href="{% url 'courselist3' %}" class="btn btn-primary">Go to COURSES</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"style="margin-top: 20px;">
+        <div class="card" style="width: 19rem;">
+            <img src="{% static 'b4.jpg' %}" class="card-img-top" alt="Responsive-image">
+            <div class="card-body">
+              <h5 class="card-title">MARTHAHALLI Branch</h5>
+              <p class="card-text">#126,4th main,Marthahalli</p>
+              <p class="card-text">Bangalore-560071</p>
+              <a href="{% url 'courselist4' %}" class="btn btn-primary">Go to COURSES</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

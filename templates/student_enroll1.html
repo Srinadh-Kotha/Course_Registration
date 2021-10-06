@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}Enrolled{% endblock %}
+{% block content %}
+<form method="GET" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">INSTITUTE</th>
+          <th scope="col">COURSE</th>
+        </tr>
+      </thead>
+    {% for i in student %}
+      <tbody>
+        <tr>
+          <th scope="row">{{ i.id }}</th>
+          <td>{{ i.institute }}</td>
+          <td>{{ i.course }}</td>
+        </tr>
+      </tbody>
+    {% endfor %} 
+</form>
+{% endblock %}

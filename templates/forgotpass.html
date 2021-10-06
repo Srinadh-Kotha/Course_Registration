@@ -1,0 +1,37 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}Forgot Password{% endblock %}
+{% block content %}
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'icon.jpg' %}" class="img-fluid" alt="Responsive-image" style="padding: 100px;">
+        </div>
+        <div class="col-md-6" style="padding: 60px; margin-top: 40px;">
+            <form style="align-items: center;
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            margin: 40px 0 0;
+            padding: 20px 0 28px;
+            width: 396px; " method="POST" action="{% url 'forgotPassword' %}">
+                {% csrf_token %}
+                <div class="form-group" style ="margin: 25px">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 1rem auto 0 auto; display: block ;">Submit</button>
+                {% if messages %}
+                {% for message in messages %}
+                  <p style="color: green; margin-left: 25px;">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
