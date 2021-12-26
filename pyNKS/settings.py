@@ -32,7 +32,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'srinadhkotha8@gmail.com'
-EMAIL_HOST_PASSWORD = 'ghihetucsocvamxv'
+EMAIL_HOST_PASSWORD = 'tjmkismvfymfwolh'
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,16 +83,24 @@ WSGI_APPLICATION = 'pyNKS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'projectsuccess',
+        'NAME': 'projectlasya',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'sussilassi',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+
         }
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#          'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

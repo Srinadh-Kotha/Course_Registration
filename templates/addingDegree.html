@@ -1,0 +1,97 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}ABOUT US{% endblock %}
+{% block content %}
+
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-md-6" style="padding: 60px;">
+          <form style="align-items: center;
+          background-color: #fff;
+          border: none;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+          box-sizing: border-box;
+          margin: 15px 0 0;
+          padding: 20px 0 28px;
+          width: 396px; " method="POST" action="{% url 'adddegree' %}"> 
+              {% csrf_token %}    
+              <div class="form-group" style="margin: 25px;" > 
+                <input type="text" name="degreename" class="form-control" placeholder="Degree Name" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="duration" class="form-control" placeholder="Duration" required>
+              </div>  
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="startdate" class="form-control" placeholder="Start Date" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="enddate" class="form-control" placeholder="End Date" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="fee" class="form-control" placeholder="Fee" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="advancefee" class="form-control" placeholder="Advance Fee" required>
+              </div>
+              <div class="form-group" style="margin: 25px;" > 
+                <input type="text" name="reqpercentage" class="form-control" placeholder="Required Previous academic percentage" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="specialization" class="form-control" placeholder="Specialization" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <textarea rows="3" name="specializtiondesc" class="form-control" placeholder="Description" required></textarea>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="seats" class="form-control" placeholder="Seats Available" required>
+              </div>
+              <button type="submit" class="btn btn-primary" style="margin: 1rem auto 0 auto; display: block ;">Submit</button>
+              {% if messages %}
+              {% for message in messages %}
+                <p style="color: green; margin-left: 25px;">{{message}}</p>
+              {% endfor %}
+              {% endif %}
+          </form>
+        </div>
+        <div class="col-md-6" style="padding: 60px;">
+            <form style="align-items: center;
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            margin: 15px 0 0;
+            padding: 20px 0 28px;
+            width: 396px; " method="POST" action="{% url 'addspecialization' %}"> 
+                {% csrf_token %}   
+                <div class="form-group" style="margin: 25px;">
+                <select class="form-control" name="select">
+                  <option value="">Select Degree</option>
+                {% for i in deggs %}    
+                  <option value="{{ i.degree_name }}">{{ i.degree_name }}</option>
+                {% endfor %}
+                </select>
+            </div> 
+            <div class="form-group" style="margin: 25px;">
+                <input type="text" name="specialization" class="form-control" placeholder="Specialization" required>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <textarea rows="3" name="specializtiondesc" class="form-control" placeholder="Description" required></textarea>
+              </div>
+              <div class="form-group" style="margin: 25px;">
+                <input type="text" name="seats" class="form-control" placeholder="Seats Available" required>
+              </div>
+                <button type="submit" class="btn btn-primary" style="margin: 1rem auto 0 auto; display: block ;">Submit</button>
+                {% if messages %}
+                {% for message in messages %}
+                  <p style="color: green; margin-left: 25px;">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+            </form>
+          </div>
+    </div>
+
+</div>
+
+{% endblock %}

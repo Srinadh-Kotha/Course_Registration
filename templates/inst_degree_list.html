@@ -1,0 +1,30 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}LOG-IN{% endblock %}
+{% block content %}
+
+<div class="row">
+    {% for i in deggs %}
+    <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card" >
+            <div class="card-body">
+              <h3 class="card-title" name="{{ i.degree_name }}">Degree Name : {{ i.degree_name }}</h3>
+              <p><b>Duration : </b>{{ i.duration }}</p>
+              <p><b>Comments : </b>{{ i.comments }}</p>
+              <p><b>Start Date : </b>{{ i.start_date }}</p>
+              <p><b>End Date : </b>{{ i.end_date }}</p>
+              <p><b>Fee : </b>{{ i.fee }}</p>
+              <p><b>Advance Fee : </b>{{ i.advance_fee }}</p>
+              <!-- <h5 class="card-title"><b>Start Date : </b>{{ i.start_date }}</h5>
+              <h5 class="card-title"><b>End Date : </b>{{ i.end_date }}</h5>
+              <h5><b>Status : </b>{{ i.status }}</h5> -->
+              <form action="inst_specializations/{{i.id}}/" method = "post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Specializations</button>
+              </form>  
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}LOG-IN{% endblock %}
+{% block content %}
+
+<div class="row">
+    {% for i in specs %}
+    <div class="col-md-4" style="margin-top: 20px;">
+        <div class="card" >
+            <div class="card-body">
+              <h3 class="card-title" name="{{ i.specialization_name }}">Specialization Name : {{ i.specialization_name }}</h3>
+              <p><b>Description : </b>{{ i.description }}</p>
+              <p><b>Seats Available : </b>{{ i.seats_available }}</p>
+              <p>{{i.id}}</p>
+              <form action="payment_degree/{{i.id}}/" method = "post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Pay</button>
+              </form>  
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

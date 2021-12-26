@@ -2,6 +2,46 @@
 {% load static %}
 {% block title %}SIGN-UP{% endblock %}
 {% block content %}
+<style>
+  .toggle-btn{
+    display: flex;
+    padding: 0 25px 0 25px;
+    width: 100%;
+  }
+  .toggle-btn span{
+    width: 50%;
+  }
+  .toggle-btn button{
+    width: 100%;
+    border: none;
+    height: 40px;
+  }
+  .span1 button{
+    background-color: rgba(247, 255, 176, 0.37);
+    border-bottom: 3px solid yellow;
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-right: 0.5px solid white;
+  }
+  .span2 button{
+    background-color: rgba(247, 255, 176, 0.37);
+    border-bottom: 3px solid yellowgreen;
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+  .toggle-btn button:hover{
+    background-color:whitesmoke;
+    border-bottom: 3px solid black;
+    
+  }
+  .toggle-btn a{
+    color: #222222;
+    font-size: medium;
+  }
+  .toggle-btn a:hover{
+    text-decoration: none;
+    color: #222222;
+  }
+</style>
+
 <div class='container-fluid'>
     <div class="row">
         <div class="col-md-6">
@@ -17,7 +57,14 @@
           margin: 40px 0 0;
           padding: 20px 0 28px;
           width: 396px; " method="POST" action="{% url 'insertrecord' %}"> 
-              {% csrf_token %}         
+              {% csrf_token %}    
+              <div class="toggle-btn"><span class="span1"><button><a href="{% url 'student' %}">Student</a></button></span><span class="span2"><button><a href="{% url 'institute' %}">Institute</a></button></span></div>      
+              {% if di %}
+              <div class="form-group" style="margin: 25px;" > 
+                <input type="text" name="institutename" class="form-control" placeholder="Institute Name" required>
+              </div>
+              {% endif %}
+              <!-- {{di}} -->
               <div class="form-group" style="margin: 25px;" > 
                 <input type="text" name="firstname" class="form-control" placeholder="First name" required>
               </div>
@@ -52,7 +99,13 @@
                 </span>
                 </div>
               </div>
+              {% if not di %}
+              <div class="form-group" style="margin: 25px;" > 
+                <input type="text" name="percentage" class="form-control" placeholder="Previous academic percentage" required>
+              </div>
+              {% endif %}
               <button type="submit" class="btn btn-primary" style="margin: 1rem auto 0 auto; display: block ;">Submit</button>
+
               {% if messages %}
               {% for message in messages %}
                 <p style="color: green; margin-left: 25px;">{{message}}</p>

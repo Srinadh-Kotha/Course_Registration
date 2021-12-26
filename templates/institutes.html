@@ -2,19 +2,42 @@
 {% load static %}
 {% block title %}INSTITUTES{% endblock %}
 {% block content %}
-<div class="row">
-    <div class="col-md-3" style="margin-top: 20px;">
-        <div class="card" style="width: 19rem;">
-            <img src="{% static 'b1.jpg' %}" class="card-img-top" alt="Responsive-image">
-            <div class="card-body">
-              <h5 class="card-title">SARJAPURA Branch</h5>
-              <p class="card-text">#4/96,4th main, Sarjapura</p>
-              <p class="card-text">Bangalore-560042</p>
-              <a href="{% url 'courselist1' %}" class="btn btn-primary">Go to COURSES</a>
-            </div>
-        </div>    
-    </div>
 
+<!-- <p>srinadh</p> -->
+<div class="row">
+    {% for i in ins %}
+    <div class="col-md-3" style="margin-top: 20px;">
+           
+        <div class="card" style="width: 19rem;">
+            <!-- <img src="{% static 'b1.jpg' %}" class="card-img-top" alt="Responsive-image"> -->
+            <div class="card-body">
+              <h4 class="card-title">Institute : {{i.institute_name}}</h4>
+
+                <h6>Degrees :</h6>
+                <div class="row">
+                    {% for j in deggs %}
+                        {% ifequal j.institute_id_id i.id %}
+                        <div class="col-sm-6" style="margin: 3px 0px 3px 0px;">
+                            <div class="card">
+                                <p class="card-text">{{j.degree_name}}</p>
+                            </div>
+                        </div>
+                        {% endifequal %}
+                    {% endfor %}
+                </div>
+              <!-- <p class="card-text">Bangalore-560042</p>
+              <a class="btn btn-primary">Go to COURSES</a> -->
+            </div>
+            <form action="ins_degrees/{{i.id}}/" method = "post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary" style="margin: 0px auto 10px auto; display: block ;">open Details</button>
+            </form> 
+        </div>  
+     
+    </div> 
+    {% endfor %}
+</div>
+<!-- 
     <div class="col-md-3" style="margin-top: 20px;">
         <div class="card" style="width: 19rem;">
             <img src="{% static 'b2.jpg' %}" class="card-img-top" alt="Responsive-image">
@@ -22,7 +45,7 @@
               <h5 class="card-title">YESHWANTHPUR branch</h5>
               <p class="card-text">#842,3rd cross, Yeshwantpur</p>
               <p class="card-text">Bangalore-560022</p>
-              <a href="{% url 'courselist2' %}" class="btn btn-primary">Go to COURSES</a>
+              <a class="btn btn-primary">Go to COURSES</a>
             </div>
         </div>
     </div>
@@ -33,7 +56,7 @@
               <h5 class="card-title">KORAMANGALA Branch</h5>
               <p class="card-text">#842,5th cross, Koramangala</p>
               <p class="card-text">Church Street, Bangalore-560027</p>
-              <a href="{% url 'courselist3' %}" class="btn btn-primary">Go to COURSES</a>
+              <a class="btn btn-primary">Go to COURSES</a>
             </div>
         </div>
     </div>
@@ -44,9 +67,9 @@
               <h5 class="card-title">MARTHAHALLI Branch</h5>
               <p class="card-text">#126,4th main,Marthahalli</p>
               <p class="card-text">Bangalore-560071</p>
-              <a href="{% url 'courselist4' %}" class="btn btn-primary">Go to COURSES</a>
+              <a class="btn btn-primary">Go to COURSES</a>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 {% endblock %}

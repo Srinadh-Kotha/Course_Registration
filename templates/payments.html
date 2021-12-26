@@ -1,0 +1,443 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}PAYMENT{% endblock %}
+{% block content %}
+<!-- <style>
+
+:root {
+  --small-mobile-font-size: 20px;
+  --large-mobile-font-size: 22px;
+  --desktop-font-size: 18px;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 500;
+  margin: 20px 10px 0 10px;
+}
+
+button {
+  background-color: black;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #eee;
+  cursor: pointer;
+  display: block;
+  font-size: 20px; /* fallback */
+  font-size: var(--large-mobile-font-size);
+  font-weight: 400;
+  margin: 3px 0 0 0;
+  padding: 14px;
+}
+
+button:disabled {
+  color: #888;
+  cursor: default;
+}
+
+button:not(:disabled):hover {
+  background-color: #333;
+  color: white;
+}
+
+div.explanation {
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+section#cc-exp-csc div:not(:last-child) {
+  margin: 0 10px 0 0;
+}
+
+h1 {
+  border-bottom: 1px solid #ccc;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+  padding: 0 0 10px 0;
+}
+
+input {
+  border: 1px solid #ccc;
+  font-size: 22px; /* fallback */
+  font-size: var(--large-mobile-font-size);
+  padding: 15px;
+  width: 90%; /* fallback */
+  width: calc(100% - 30px); /* full width minus padding */
+}
+
+input:not(:focus):invalid,
+input:not(:focus):invalid {
+  color: red;
+  outline-color: red;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-size: var(--large-mobile-font-size);
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+p {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+form section {
+  margin: 0 0 15px 0;
+  /* position: relative; */
+}
+
+form section:last-of-type {
+    margin: 0 0 25px 0;
+}
+
+section#cc-exp-csc {
+  display: flex;
+  justify-content: space-between;
+}
+
+section#exp-csc select#cc-exp-month {
+  margin: 0 10px 0 0;
+  width: 67px;
+}
+
+section#exp-csc select#cc-exp-year {
+  width: 99px;
+}
+
+select {
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: var(--mobile-font-size);
+  padding: 15px 15px 15px 11px;
+  width: 100%; /* don't need to account for padding :/ */
+}
+
+@media (min-width: 400px) {
+  body {
+    margin: 40px 20px 0 20px;
+  }
+  button {
+    font-size: 20px; /* fallback */
+    font-size: var(--large-mobile-font-size);
+  }
+  div.explanation {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0 0 60px 0;
+  }
+  input {
+    font-size: 22px; /* fallback */
+    font-size: var(--large-mobile-font-size);
+  }
+  label {
+    font-size: 22px; /* fallback */
+    font-size: var(--large-mobile-font-size);
+    margin: 0 0 10px 0;
+  }
+  p {
+    font-weight: 300;
+  }
+  form section {
+    margin: 0 0 40px 0;
+  }
+  form section:last-of-type {
+    margin: 0 0 60px 0;
+  }
+}
+
+@media (min-width: 500px) {
+  body {
+    margin: 70px 70px 0 70px;
+  }
+  button {
+    font-size: 18px; /* fallback */
+    font-size: var(--desktop-font-size);
+  }
+  section#cc-exp-csc div:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 100;
+  }
+  input {
+    font-size: 18px; /* fallback */
+    font-size: var(--desktop-font-size);
+  }
+  label {
+    font-size: 18px; /* fallback */
+    font-size: var(--desktop-font-size);
+    margin: 0 0 10px 0;
+  }
+  form section {
+      margin: 0 0 35px 0;   
+  }
+}
+
+
+</style> -->
+
+
+
+
+      <!-- <form action="#" method="post">
+
+        <h1>Payment form</h1>
+
+        <section>        
+          <label for="cc-number">Card number</label>
+          <input id="cc-number" name="cc-number" inputmode="numeric" autocomplete="cc-number" maxlength="50" pattern="[\d ]{10,30}" required>
+        </section>
+
+        <section>        
+          <label for="cc-name">Name on card</label>
+          <input id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="30" pattern="[\p{L} \-\.]+" required>
+        </section>
+        
+        <section id="cc-exp-csc">      
+          <div>
+            <label for="cc-exp">Expiry date</label>
+            <input id="cc-exp" name="cc-exp" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" required>
+          </div> 
+          <div>
+            <label for="cc-csc">Security code</label>
+            <input id="cc-csc" name="cc-csc" inputmode="numeric" maxlength="3" autocomplete="cc-csc" required>
+            <div class="explanation">Back of card, last 3 digits</div>
+          </div>
+        </section>  
+
+
+        <button id="complete-payment">Complete payment</button>
+
+      </form> -->
+      <style>
+/* .row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+} */
+
+/* .row{
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 0px;
+} */
+
+.col-25 {
+  margin: 25px 0px 0px 0px;
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-50{
+  margin: 25px 0px 25px 0px;
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select{
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.smm{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.btncls {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+/* @media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+} */
+      </style>
+
+      <div class="row">
+        <div class="col-50">
+          <div class="container">
+            <form method="POST" action="{% url 'payment' %}">
+              {% csrf_token %}
+              <div class="row">
+                <!-- <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="john@example.com">
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="state" name="state" placeholder="NY">
+                    </div>
+                    <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="zip" name="zip" placeholder="10001">
+                    </div>
+                  </div>
+                </div> -->
+      
+                <div class="col-50">
+                  <h3>Payment</h3>
+                  <!-- <label for="name">Accepted Cards</label> -->
+                  <!-- <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                  </div> -->
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                  <label for="ccnum">Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+      
+                  <div class="row">
+                    <div class="col-50 smm">
+                      <label for="expmonth">Exp Month</label>
+                      <!-- <input type="text" id="expmonth" name="expmonth" placeholder="September"> -->
+                      <select name="months" id="expmonth" name="expmonth">
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                      </select>
+                    </div>
+                    <div class="col-50 smm">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-50 smm">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                    <div class="col-50 smm">
+                      <label for="gmail">Email</label>
+                      <input type="text" id="gmail" name="gmail" placeholder="ex@gmail.com">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <label>
+                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+              </label> -->
+              <input type="submit" value="Continue to checkout" class="btn btncls">
+            </form>
+          </div>
+        </div>
+      
+        <div class="col-25">
+          <div class="container">
+            <h4>Cart
+              <!-- <span class="price" style="color:black">
+                <i class="fa fa-shopping-cart"></i>
+              </span> -->
+              <p>123</p>
+            </h4>
+            <hr>
+            <p>Advance Amount <span class="price" style="color:black"><b>{{adv_amt}}</b></span></p>
+          </div>
+          {% if otp %}
+          <form method="POST" action="verify">{% csrf_token %}  
+            <label for="otp">Email</label>
+            <input type="text" id="otp" name="otp" placeholder="12345">
+            <input type="submit" value="verify" class="btn btncls">
+          </form>
+          {% endif %}
+        </div>
+        
+      </div>
+{% endblock %}
