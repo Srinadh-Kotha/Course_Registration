@@ -334,7 +334,7 @@ span.price {
       <div class="row">
         <div class="col-50">
           <div class="container">
-            <form method="POST" action="{% url 'payment' %}">
+            <form method="POST" action="payment/{{a}}/">
               {% csrf_token %}
               <div class="row">
                 <!-- <div class="col-50">
@@ -431,11 +431,16 @@ span.price {
             <p>Advance Amount <span class="price" style="color:black"><b>{{adv_amt}}</b></span></p>
           </div>
           {% if otp %}
-          <form method="POST" action="verify">{% csrf_token %}  
-            <label for="otp">Email</label>
+          <form method="POST" action="verify/{{b}}/">{% csrf_token %}  
+            <label for="otp">Enter OTP</label>
             <input type="text" id="otp" name="otp" placeholder="12345">
             <input type="submit" value="verify" class="btn btncls">
           </form>
+          {% endif %}
+          {% if messages %}
+          {% for message in messages %}
+            <p style="color: green; margin-left: 25px;">{{message}}</p>
+          {% endfor %}
           {% endif %}
         </div>
         

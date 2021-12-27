@@ -45,7 +45,7 @@ urlpatterns = [
     # path('courselist2',views.courselist2,name='courselist2'),
     # path('courselist3',views.courselist3,name='courselist3'),
     # path('courselist4',views.courselist4,name='courselist4'),
-    path('institutes',views.institutes,name='institutes'),
+    # path('institutes',views.institutes,name='institutes'),
     path('institute',views.institute,name='institute'),
     path('contactus',views.contactus,name='contactus'),
     path('Aboutus',views.Aboutus,name='Aboutus'),
@@ -57,7 +57,7 @@ urlpatterns = [
     path('forgotpass',views.forgotpass,name='forgotpass'),
     path('forgotPassword',views.forgotPassword,name='forgotPassword'),
     path('passSent',views.passSent,name='passSent'),
-    path('payment',views.payment,name='payment'),
+    
     path('institutesone',views.institutesone,name='institutesone'),
     path('student',views.student,name='student'),
     path('adddegree',views.adddegree,name='adddegree'),
@@ -67,9 +67,11 @@ urlpatterns = [
     path('ins_degrees/<int:p>/inst_specializations/<int:i>/payment_degree/<int:k>/',views.payment_degree,name='payment_degree'),
     path('show_institutes',views.show_institutes,name='show_institutes'),
     path('ins_degrees/<int:p>/',views.ins_degrees,name='ins_degrees'),
-    path('verify',views.verify,name='verify'),
+    path('ins_degrees/<int:p>/inst_specializations/<int:i>/payment_degree/<int:k>/payment/<int:a>/verify/<int:b>/',views.verify,name='verify'),
+    path('ins_degrees/<int:p>/inst_specializations/<int:i>/payment_degree/<int:k>/payment/<int:a>/',views.payment,name='payment'),
+    # path('ins_degrees/<int:p>/inst_specializations/<int:i>/payment_degree/<int:k>/verify',views.verify,name='verify'),
     path('ins_degrees/<int:p>/inst_specializations/<int:i>/',views.inst_specializations,name='inst_specializations'),
-
+    path('students_enrolled',views.students_enrolled,name='students_enrolled')
 
     
 

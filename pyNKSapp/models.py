@@ -66,10 +66,10 @@ class specialization(models.Model):
         db_table="specialization"
 
 class enrolled(models.Model):
-    user=models.ForeignKey(signupdetails,on_delete=models.CASCADE)
-    institute_id=models.ForeignKey(institutes,on_delete=models.CASCADE)
-    degree_id=models.ForeignKey(degree,on_delete=models.CASCADE)
-    specialization_id=models.ForeignKey(specialization,on_delete=models.CASCADE)
+    user=models.IntegerField(max_length=10)
+    institute_id=models.IntegerField(max_length=10)
+    degree_id=models.IntegerField(max_length=10)
+    specialization_id=models.IntegerField(max_length=10)
     class Meta:
         db_table="enrolled"
 
